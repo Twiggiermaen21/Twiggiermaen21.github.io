@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Strona Główna</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: white;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body>
-    hello world!
+    <h1>Witaj na stronie!</h1>
+    <a href="strona1.html" class="button">Przejdź do strony 1</a>
+    <a href="strona2.html" class="button">Przejdź do strony 2</a>
 </body>
 
 </html>
