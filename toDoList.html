@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple and efficient To-Do List application">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="todo-app-header">
+            <img src="images/icon.png">
+            <h2>To Do List</h2>
+        </div>
+
+        <div class="todo-app">
+
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add a new task...">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container"> </ul>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-to-home">⬅ Powrót do strony głównej</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
