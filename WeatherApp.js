@@ -7,17 +7,12 @@ var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
 const apiKey = 'c629587a963b722705197497383d2c65';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 
-tl.fromTo("#wind-middle", { y: 0 }, { x: -30, duration: 1, yoyo: true, repeat: -1, duration: 1, delay: 1.5 });
-
-var values = "100%;40% 60%;20 350;50% 50%;true;10%".split(";"),
-    currentIndex = 0;
+//tl.fromTo("#wind-middle", { y: 0 }, { x: -30, duration: 1, yoyo: true, repeat: -1, duration: 1, delay: 1.5 });
+tl.fromTo("#wind-middle", 1, { drawSVG: 0, yoyo: true, repeat: -1, delay: 1.5 });
 
 //set the initial value
-gsap.set("#wind-up, #wind-down", { visibility: "visible" });
 
-
-gsap.to("#wind-up, #wind-down", { drawSVG: true, duration: 1, ease: "power1.inOut" });
-
+tl.fromTo("#wind-up, #wind-down", 1, { drawSVG: 0 }, { drawSVG: "90% 100%", ease: Bounce.easeOut, delay: 0.5, yoyo: true, repeat: -1 });
 
 
 

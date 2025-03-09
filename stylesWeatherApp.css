@@ -116,9 +116,3 @@ body {
     font-size: 14px;
     margin-top: 10px;
 }
-
-#wind-up,
-#wind-down {
-
-    visibility: hidden;
-}
