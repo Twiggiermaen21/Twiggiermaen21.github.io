@@ -12,7 +12,7 @@ const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='
 //tl.fromTo("#wind-down", { x: 5 }, { x: -5, yoyo: true });
 
 
-tl.fromTo('#weather-icon', { y: 0 }, { y: -200, duration: 1.5 });
+
 
 
 
@@ -70,3 +70,4 @@ searchInput.addEventListener('keyup', function (event) {
         getWeather(searchInput.value)
     }
 });
+tl.fromTo('#svgContainer ', { y: 0 }, { y: -5, duration: 1.5, yoyo: true });
