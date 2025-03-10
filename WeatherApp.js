@@ -1,21 +1,11 @@
 
 const searchInput = document.getElementById('city');
 
-var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+
 
 
 const apiKey = 'c629587a963b722705197497383d2c65';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-
-//tl.fromTo("#wind-middle", { y: 5 }, { x: -5, yoyo: true });
-//tl.fromTo("#wind-up", { x: 5 }, { x: -5, yoyo: true });
-//tl.fromTo("#wind-down", { x: 5 }, { x: -5, yoyo: true });
-
-
-
-
-
-
 
 
 async function getWeather(searchInput) {
@@ -38,12 +28,27 @@ async function getWeather(searchInput) {
         document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
         if (data.weather[0].icon) {
-
+            console.log(data.weather[0].main);
 
             fetch("images/WEATHERAPP/" + data.weather[0].main + ".svg")
-                .then(response => response.text()) // Pobiera zawartość pliku SVG jako tekst
+                .then(response => response.text())
                 .then(svgText => {
-                    document.getElementById("svgContainer").innerHTML = svgText; // Wstawia kod SVG do div-a
+                    const container = document.getElementById("svgContainer");
+                    container.innerHTML = svgText;
+                    setTimeout(() => {
+                        const sunElement = container.querySelector("#svgContainer #main");
+                        if (sunElement) {
+
+
+                            gsap.fromTo(sunElement.querySelector('#sun'), { y: 0 }, { y: -1, duration: 1.5, yoyo: true, repeat: -1 });
+                            gsap.fromTo(sunElement.querySelector('#cloud'), { x: 0 }, { x: -2, duration: 3, yoyo: true, repeat: -1 });
+
+                        } else {
+                            console.log("Nie znaleziono #sun!");
+                        }
+                    }, 50);
+
+
                 })
                 .catch(error => console.error("Błąd ładowania SVG:", error));
 
@@ -58,6 +63,22 @@ async function getWeather(searchInput) {
 
 }
 
+gsap.fromTo("#wind-middle", { x: 2 }, { x: -3, yoyo: true, repeat: -1, duration: 5 }, ">");
+gsap.fromTo("#wind-up", { x: 4 }, { x: 0, yoyo: true, repeat: -1, duration: 7 }, ">");
+gsap.fromTo("#wind-down", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 4 }, ">");
+
+gsap.fromTo("#h-1", { x: 1 }, { x: -1, yoyo: true, repeat: -1, duration: 3 });
+
+gsap.fromTo("#h-2", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+
+gsap.fromTo("#h-3", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+
+gsap.fromTo("#h-4", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+
+gsap.fromTo("#h-5", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+
+gsap.fromTo("#h-6", { x: 3 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+
 
 
 function searchWeather() {
@@ -70,4 +91,3 @@ searchInput.addEventListener('keyup', function (event) {
         getWeather(searchInput.value)
     }
 });
-tl.fromTo('#svgContainer ', { y: 0 }, { y: -5, duration: 1.5, yoyo: true });

@@ -60,11 +60,15 @@ body {
 }
 
 
+#svgContainer #main {
+    width: 300px;
+    height: 200px;
+    margin-top: 60px;
 
-#svgContainer {
+}
 
-    margin-top: 30px;
-
+#Layer_24 {
+    width: 330px;
 }
 
 .weather h1 {
@@ -91,19 +95,24 @@ body {
     display: flex;
     align-items: center;
     text-align: left;
+    padding: 0px 10px 0px 10px;
 
 }
 
 .col svg {
     width: 40px;
-    margin-right: 10px;
+
+}
+
+.col p {
+    margin-left: 10px;
 }
 
 .humidity,
 .wind {
-    font-size: 28px;
+    font-size: 20px;
     margin-top: -6px;
-
+    margin-left: 10px;
 }
 
 .weather {
