@@ -14,25 +14,17 @@
 
 </g>
 
-<g>
+<g id="rain">
 
-<circle cx="16" cy="26" fill="#16BCD4" r="1.5"/>
+<circle id="r-1" cx="16" cy="26" fill="#16BCD4" r="1.5"/>
 
-<circle cx="22.5" cy="26" fill="#16BCD4" r="1.5"/>
+<circle id="r-2" cx="22.5" cy="26" fill="#16BCD4" r="1.5"/>
 
-<circle cx="9.5" cy="26" fill="#16BCD4" r="1.5"/>
-
-</g>
-
-<g>
-
-<circle cx="22.5" cy="30" fill="#16BCD4" r="1.5"/>
-
-<circle cx="9.5" cy="30" fill="#16BCD4" r="1.5"/>
-
-<circle cx="16" cy="30" fill="#16BCD4" r="1.5"/>
+<circle id="r-3" cx="9.5" cy="26" fill="#16BCD4" r="1.5"/>
 
 </g>
+
+
 
 </g>
 
