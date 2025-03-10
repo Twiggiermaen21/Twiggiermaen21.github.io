@@ -40,22 +40,25 @@ async function getWeather(searchInput) {
                     setTimeout(() => {
                         const mainElement = container.querySelector("#svgContainer #main");
                         if (mainElement) {
+
                             const sunElement = mainElement.querySelector("#sun");
-                            if (sunElement) {
+                            const moonElement = mainElement.querySelector("#moon");
+                            if (sunElement !== null) {
                                 gsap.fromTo(sunElement, { y: 0 }, { y: -1, duration: 1.5, yoyo: true, repeat: -1, });
+                            } else if (moonElement !== null) {
+                                gsap.fromTo(moonElement, { y: 0 }, { y: -1, duration: 1.5, yoyo: true, repeat: -1, });
+
                             }
                             const cloudElement = mainElement.querySelector("#cloud");
-                            if (cloudElement) {
+                            if (cloudElement !== null) {
                                 gsap.fromTo(cloudElement, { x: 0 }, { x: -2, duration: 3, yoyo: true, repeat: -1 });
                             }
                             const RainElement = mainElement.querySelector("#rain");
-                            if (RainElement) {
+                            if (RainElement !== null) {
                                 for (let i = 1; i <= 6; i++) {
                                     let dur = Math.random() * 1 + 1;
-                                    gsap.fromTo(RainElement.querySelector(`#r-${i}`), { y: 0, x: 0 }, { y: 2, x: -2, duration: dur, repeat: -1 });
-
+                                    gsap.fromTo(RainElement.querySelector(`#r-${i}`), { y: 0 }, { y: 20, duration: dur, repeat: -1, ease: Linear.easeNone });
                                 }
-
                             }
 
 
