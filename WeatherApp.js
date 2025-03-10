@@ -20,7 +20,7 @@ async function getWeather(searchInput) {
     } else {
 
         var data = await response.json();
-
+        console.log(data);
 
         document.querySelector('.city').innerHTML = data.name;
         document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°C';
@@ -28,23 +28,40 @@ async function getWeather(searchInput) {
         document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
         if (data.weather[0].icon) {
-            console.log(data.weather[0].main);
+            console.log(data.weather[0].icon);
 
-            fetch("images/WEATHERAPP/" + data.weather[0].main + ".svg")
+
+
+            fetch("images/WEATHERAPP/" + data.weather[0].icon + ".svg")
                 .then(response => response.text())
                 .then(svgText => {
                     const container = document.getElementById("svgContainer");
                     container.innerHTML = svgText;
                     setTimeout(() => {
-                        const sunElement = container.querySelector("#svgContainer #main");
-                        if (sunElement) {
+                        const mainElement = container.querySelector("#svgContainer #main");
+                        if (mainElement) {
+                            const sunElement = mainElement.querySelector("#sun");
+                            if (sunElement) {
+                                gsap.fromTo(sunElement, { y: 0 }, { y: -1, duration: 1.5, yoyo: true, repeat: -1, });
+                            }
+                            const cloudElement = mainElement.querySelector("#cloud");
+                            if (cloudElement) {
+                                gsap.fromTo(cloudElement, { x: 0 }, { x: -2, duration: 3, yoyo: true, repeat: -1 });
+                            }
+                            const RainElement = mainElement.querySelector("#rain");
+                            if (RainElement) {
+                                for (let i = 1; i <= 6; i++) {
+                                    let dur = Math.random() * 1 + 1;
+                                    gsap.fromTo(RainElement.querySelector(`#r-${i}`), { y: 0, x: 0 }, { y: 2, x: -2, duration: dur, repeat: -1 });
+
+                                }
+
+                            }
 
 
-                            gsap.fromTo(sunElement.querySelector('#sun'), { y: 0 }, { y: -1, duration: 1.5, yoyo: true, repeat: -1 });
-                            gsap.fromTo(sunElement.querySelector('#cloud'), { x: 0 }, { x: -2, duration: 3, yoyo: true, repeat: -1 });
 
                         } else {
-                            console.log("Nie znaleziono #sun!");
+                            console.log("Nie znaleziono #main!");
                         }
                     }, 50);
 
