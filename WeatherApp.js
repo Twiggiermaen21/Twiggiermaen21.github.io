@@ -7,12 +7,14 @@ var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
 const apiKey = 'c629587a963b722705197497383d2c65';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 
-//tl.fromTo("#wind-middle", { y: 0 }, { x: -30, duration: 1, yoyo: true, repeat: -1, duration: 1, delay: 1.5 });
-tl.fromTo("#wind-middle", 1, { drawSVG: 0, yoyo: true, repeat: -1, delay: 1.5 });
+//tl.fromTo("#wind-middle", { y: 5 }, { x: -5, yoyo: true });
+//tl.fromTo("#wind-up", { x: 5 }, { x: -5, yoyo: true });
+//tl.fromTo("#wind-down", { x: 5 }, { x: -5, yoyo: true });
 
-//set the initial value
 
-tl.fromTo("#wind-up, #wind-down", 1, { drawSVG: 0 }, { drawSVG: "90% 100%", ease: Bounce.easeOut, delay: 0.5, yoyo: true, repeat: -1 });
+tl.fromTo('#weather-icon', { y: 0 }, { y: -200, duration: 1.5 });
+
+
 
 
 
@@ -37,8 +39,16 @@ async function getWeather(searchInput) {
 
         if (data.weather[0].icon) {
 
-            weatherIcon.src = "images/WEATHERAPP/" + data.weather[0].main + ".svg";
-            console.log(data.weather[0].main + ".svg");
+
+            fetch("images/WEATHERAPP/" + data.weather[0].main + ".svg")
+                .then(response => response.text()) // Pobiera zawartość pliku SVG jako tekst
+                .then(svgText => {
+                    document.getElementById("svgContainer").innerHTML = svgText; // Wstawia kod SVG do div-a
+                })
+                .catch(error => console.error("Błąd ładowania SVG:", error));
+
+
+
         }
 
         document.querySelector('.weather').style.display = 'block';
