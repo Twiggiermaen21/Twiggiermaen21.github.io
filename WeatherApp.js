@@ -67,17 +67,17 @@ gsap.fromTo("#wind-middle", { x: 2 }, { x: -3, yoyo: true, repeat: -1, duration:
 gsap.fromTo("#wind-up", { x: 4 }, { x: 0, yoyo: true, repeat: -1, duration: 7 }, ">");
 gsap.fromTo("#wind-down", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 4 }, ">");
 
-gsap.fromTo("#h-1", { x: 1 }, { x: -1, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-1", { x: 2 }, { x: -1, yoyo: true, repeat: -1, duration: 8 });
 
-gsap.fromTo("#h-2", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-2", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 5 });
 
-gsap.fromTo("#h-3", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-3", { x: -2 }, { x: 2, yoyo: true, repeat: -1, duration: 6 });
 
-gsap.fromTo("#h-4", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-4", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 7 });
 
-gsap.fromTo("#h-5", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-5", { x: -1 }, { x: 2, yoyo: true, repeat: -1, duration: 6 });
 
-gsap.fromTo("#h-6", { x: 3 }, { x: -2, yoyo: true, repeat: -1, duration: 3 });
+gsap.fromTo("#h-6", { x: 1 }, { x: -1, yoyo: true, repeat: -1, duration: 3 });
 
 
 
