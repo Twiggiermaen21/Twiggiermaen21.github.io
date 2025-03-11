@@ -35,10 +35,17 @@
     margin: 10px;
 }
 
+
+.calculator form input:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 form .display {
     display: flex;
     justify-content: flex-end;
     margin: 20px 0;
+
 }
 
 form .display input {
@@ -46,6 +53,14 @@ form .display input {
     flex: 1;
     font-size: 45px;
     box-shadow: none;
+
+    color: #e3f9ff;
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.63);
+
+    padding: 10px;
+    margin: 20px;
+    background-color: transparent;
 }
 
 form input.equal {
