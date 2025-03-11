@@ -55,7 +55,7 @@ async function getWeather(searchInput) {
                             }
                             const RainElement = mainElement.querySelector("#rain");
                             if (RainElement !== null) {
-                                for (let i = 1; i <= 6; i++) {
+                                for (let i = 1; i <= 3; i++) {
                                     let dur = Math.random() * 1 + 1;
                                     gsap.fromTo(RainElement.querySelector(`#r-${i}`), { y: 0 }, { y: 20, duration: dur, repeat: -1, ease: Linear.easeNone });
                                 }
