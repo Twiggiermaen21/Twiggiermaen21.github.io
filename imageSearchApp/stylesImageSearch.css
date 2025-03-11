@@ -7,8 +7,18 @@
 }
 
 body {
-    background: linear-gradient(135deg, #153677, #4e085f);
+    background: #39297b;
     color: #fff;
+
+}
+
+
+.container {
+
+    max-width: 100vh;
+    margin: 0 auto;
+
+
 }
 
 h1 {
@@ -37,7 +47,8 @@ form input {
     color: #fff;
     font-size: 18px;
     padding: 0 30px;
-
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 
 }
 
@@ -84,4 +95,24 @@ form button {
     height: 230px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+a.back-to-home {
+    display: block;
+    text-decoration: none;
+    color: #002765;
+    background: #fff;
+    margin: 20px auto 0;
+    padding: 12px 12px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
