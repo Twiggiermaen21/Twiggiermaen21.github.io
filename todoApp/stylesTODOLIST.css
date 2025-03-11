@@ -102,7 +102,7 @@ ul li:before {
     height: 28px;
     border-radius: 50%;
 
-    background-image: url(images/unchecked.png);
+    background-image: url(images/TODOLIST/unchecked.png);
     background-size: cover;
     background-position: center;
     top: 12px;
@@ -115,7 +115,7 @@ ul li.checked {
 }
 
 ul li.checked:before {
-    background-image: url(images/checked.png);
+    background-image: url(images/TODOLIST/checked.png);
 }
 
 ul li span {
@@ -133,4 +133,24 @@ ul li span {
 
 ul li span:hover {
     background: #edeef0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #002765;
+    background: #fff;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

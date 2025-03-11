@@ -32,7 +32,7 @@ async function getWeather(searchInput) {
 
 
 
-            fetch("images/WEATHERAPP/" + data.weather[0].icon + ".svg")
+            fetch("../images/WEATHERAPP/" + data.weather[0].icon + ".svg")
                 .then(response => response.text())
                 .then(svgText => {
                     const container = document.getElementById("svgContainer");
