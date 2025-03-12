@@ -1,13 +1,8 @@
 
 const searchInput = document.getElementById('city');
 
-
-
-
 const apiKey = 'c629587a963b722705197497383d2c65';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-
-
 async function getWeather(searchInput) {
     const response = await fetch(apiUrl + searchInput + `&appid=${apiKey}`);
     const weatherIcon = document.getElementById('weather-icon');
@@ -29,7 +24,6 @@ async function getWeather(searchInput) {
 
         if (data.weather[0].icon) {
             console.log(data.weather[0].icon);
-
 
 
             fetch("../images/WEATHERAPP/" + data.weather[0].icon + ".svg")
@@ -61,19 +55,13 @@ async function getWeather(searchInput) {
                                 }
                             }
 
-
-
                         } else {
                             console.log("Nie znaleziono #main!");
                         }
                     }, 50);
 
-
                 })
                 .catch(error => console.error("Błąd ładowania SVG:", error));
-
-
-
         }
 
         document.querySelector('.weather').style.display = 'block';
@@ -88,22 +76,15 @@ gsap.fromTo("#wind-up", { x: 4 }, { x: 0, yoyo: true, repeat: -1, duration: 7 },
 gsap.fromTo("#wind-down", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 4 }, ">");
 
 gsap.fromTo("#h-1", { x: 2 }, { x: -1, yoyo: true, repeat: -1, duration: 8 });
-
 gsap.fromTo("#h-2", { x: 1 }, { x: -2, yoyo: true, repeat: -1, duration: 5 });
-
 gsap.fromTo("#h-3", { x: -2 }, { x: 2, yoyo: true, repeat: -1, duration: 6 });
-
 gsap.fromTo("#h-4", { x: 2 }, { x: -2, yoyo: true, repeat: -1, duration: 7 });
-
 gsap.fromTo("#h-5", { x: -1 }, { x: 2, yoyo: true, repeat: -1, duration: 6 });
-
 gsap.fromTo("#h-6", { x: 1 }, { x: -1, yoyo: true, repeat: -1, duration: 3 });
-
 
 
 function searchWeather() {
     getWeather(searchInput.value)
-
 }
 
 searchInput.addEventListener('keyup', function (event) {
