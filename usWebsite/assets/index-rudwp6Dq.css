@@ -137,7 +137,7 @@ nav ul li {
 .hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(#08003ab3, #08003ab3), url(./assets/hero-DtWjUld0.png);
+    background: linear-gradient(#08003ab3, #08003ab3), url(/usWebsite/assets/hero-DtWjUld0.png);
     background-size: cover;
     background-position: center;
     color: #fff;
